@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +60,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -398,13 +398,16 @@ TRUE.</p>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">banffIT_website</span>()</span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co"># use example</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>input_file <span class="ot">=</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;example.xlsx&quot;</span>, <span class="at">package =</span> <span class="st">&quot;banffIT&quot;</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">banff_launcher</span>(</span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a> <span class="at">input_file =</span> input_file,</span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a> <span class="at">output_folder =</span> <span class="fu">tempdir</span>(), <span class="co"># &#39;folder_path/example&#39;</span></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a> <span class="at">language =</span> <span class="st">&#39;label:en&#39;</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a> <span class="at">option_filter =</span> adequacy <span class="sc">==</span> <span class="dv">1</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a> <span class="at">detail =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>version <span class="ot">&lt;-</span> <span class="dv">2022</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>input_file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="fu">paste0</span>(version,<span class="st">&quot;/banff_example.xlsx&quot;</span>), </span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>                          <span class="at">package =</span> <span class="st">&quot;banffIT&quot;</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="fu">banff_launcher</span>(</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>  <span class="at">input_file =</span> input_file,</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>  <span class="at">output_folder =</span> <span class="fu">tempdir</span>(), <span class="co"># &#39;folder_path/example&#39;</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>  <span class="at">version =</span> version,</span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>  <span class="at">language =</span> <span class="st">&#39;label:en&#39;</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>  <span class="at">option_filter =</span> adequacy <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>  <span class="at">detail =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 
 
